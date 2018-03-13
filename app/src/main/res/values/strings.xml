@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Popular Movies</string>
+    <string name="movie_poster_content_description">Movie Poster</string>
+    <string name="title_label_text">Title:</string>
+    <string name="release_date_label_text">Release Date:</string>
+    <string name="vote_average_label_text">Vote Average:</string>
+    <string name="movie_plot_label_text">Movie Plot:</string>
+    <string name="no_connection_error">No internet connection, please check connection and try again</string>
+    <string name="sort_by">Sort by:</string>
+    <string name="most_popular_option">Most Popular</string>
+    <string name="highest_rated_option">Highest Rated</string>
+    <string name="selection_message">Make a selection to start</string>
+    <string name="base_url">https://api.themoviedb.org/</string>
+    <string name="properties_file_path">apiKey.properties</string>
+    <string name="api_key_property_key">api_key</string>
+    <string name="generic_error">Something went wrong</string>
+    <string name="connection_error">Connection Lost. Check network and try again.</string>
+    <string name="image_url_base">https://image.tmdb.org/t/p/</string>
+    <string name="detail_image_size">w500</string>
+    <string name="grid_image_size">w780</string>
 </resources>

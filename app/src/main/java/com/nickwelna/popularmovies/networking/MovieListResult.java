@@ -1,24 +1,21 @@
 package com.nickwelna.popularmovies.networking;
 
-/**
- * Created by Nick on 3/5/2018.
- */
-class MovieListResult {
+public class MovieListResult {
 
-    String poster_path;
-    boolean adult;
-    String overview;
-    String release_date;
-    int[] genre_ids;
-    int id;
-    String original_title;
-    String orignal_language;
-    String title;
-    String backdrop_path;
-    double popularity;
-    int vote_count;
-    boolean video;
-    double vote_average;
+    private String poster_path;
+    private boolean adult;
+    private String overview;
+    private String release_date;
+    private int[] genre_ids;
+    private int id;
+    private String original_title;
+    private String original_language;
+    private String title;
+    private String backdrop_path;
+    private double popularity;
+    private int vote_count;
+    private boolean video;
+    private double vote_average;
 
     public String getPosterPath() {
 
@@ -62,9 +59,9 @@ class MovieListResult {
 
     }
 
-    public String getOrignalLanguage() {
+    public String getOriginalLanguage() {
 
-        return orignal_language;
+        return original_language;
 
     }
 

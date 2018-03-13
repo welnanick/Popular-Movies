@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ScrollViewStyle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nickwelna.popularmovies.MovieDetailActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/movie_poster"
+            style="@style/PosterStyle"
+            android:contentDescription="@string/movie_poster_content_description" />
+
+        <RelativeLayout
+            style="@style/DetailLayoutStyle"
+            android:layout_below="@id/movie_poster">
+
+            <TextView
+                android:id="@+id/movie_title_label"
+                style="@style/LabelStyle"
+                android:text="@string/title_label_text" />
+
+            <TextView
+                android:id="@+id/movie_title"
+                style="@style/DetailTextStyle"
+                android:layout_toEndOf="@id/movie_title_label" />
+
+            <TextView
+                android:id="@+id/movie_release_date_label"
+                style="@style/LabelStyle"
+                android:layout_below="@id/movie_title_label"
+                android:text="@string/release_date_label_text" />
+
+            <TextView
+                android:id="@+id/movie_release_date"
+                style="@style/DetailTextStyle"
+                android:layout_below="@id/movie_title_label"
+                android:layout_toEndOf="@id/movie_release_date_label" />
+
+            <TextView
+                android:id="@+id/movie_vote_average_label"
+                style="@style/LabelStyle"
+                android:layout_below="@id/movie_release_date_label"
+                android:text="@string/vote_average_label_text" />
+
+            <TextView
+                android:id="@+id/movie_vote_average"
+                style="@style/DetailTextStyle"
+                android:layout_below="@id/movie_release_date_label"
+                android:layout_toEndOf="@id/movie_vote_average_label" />
+
+            <TextView
+                android:id="@+id/movie_plot_synopsis_label"
+                style="@style/LabelStyle"
+                android:layout_below="@id/movie_vote_average_label"
+                android:text="@string/movie_plot_label_text" />
+
+            <TextView
+                android:id="@+id/movie_plot_synopsis"
+                style="@style/MovieDetailStyle"
+                android:layout_below="@id/movie_plot_synopsis_label" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

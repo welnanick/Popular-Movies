@@ -1,14 +1,13 @@
 package com.nickwelna.popularmovies.networking;
 
-/**
- * Created by Nick on 3/5/2018.
- */
+import java.util.List;
+
 public class MovieList {
 
-    int page;
-    int total_results;
-    int total_pages;
-    MovieListResult[] results;
+    private int page;
+    private int total_results;
+    private int total_pages;
+    private List<MovieListResult> results;
 
     public int getPage() {
 
@@ -28,7 +27,7 @@ public class MovieList {
 
     }
 
-    public MovieListResult[] getResults() {
+    public List<MovieListResult> getResults() {
 
         return results;
 
