@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_vertical_margin">8dp</dimen>
+    <dimen name="small_horizontal_margin">8dp</dimen>
+    <dimen name="padding_vertical_large">16dp</dimen>
+    <dimen name="padding_horizontal_large">16dp</dimen>
+    <dimen name="margin_horizontal_large">16dp</dimen>
+    <dimen name="margin_vertical_large">16dp</dimen>
+    <dimen name="padding_horizontal_small">8dp</dimen>
+</resources>

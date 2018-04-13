@@ -83,6 +83,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListViewHolder> 
         View view = inflater.inflate(R.layout.movie_list_item, parent, false);
 
         return new MovieListViewHolder(view, parent.getContext());
+
     }
 
     @Override
@@ -103,27 +104,25 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListViewHolder> 
         }
 
         return movies.size();
+
     }
 
     public class MovieListViewHolder extends RecyclerView.ViewHolder implements OnClickListener {
 
         @BindView(R.id.movie_poster)
         ImageView moviePoster;
-        Context context;
+        final Context context;
 
-        public MovieListViewHolder(View itemView, Context context) {
+        MovieListViewHolder(View itemView, Context context) {
 
             super(itemView);
-
             itemView.setOnClickListener(this);
-
             ButterKnife.bind(this, itemView);
-
             this.context = context;
 
         }
 
-        public void bind(String urlText) {
+        void bind(String urlText) {
 
             RequestOptions test = new RequestOptions().override(Target.SIZE_ORIGINAL);
             glide.load(context.getString(R.string.image_url_base) +

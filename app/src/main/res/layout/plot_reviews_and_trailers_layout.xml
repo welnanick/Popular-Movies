@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="16dp"
+    tools:context="com.nickwelna.popularmovies.MovieDetailActivity">
+
+    <TextView
+        android:id="@+id/movie_plot_synopsis"
+        style="@style/MovieDetailStyle"
+        android:paddingEnd="@dimen/padding_horizontal_large"
+        android:paddingStart="@dimen/padding_horizontal_large"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/test_description" />
+
+    <Button
+        android:id="@+id/trailers_button"
+        style="@style/ButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/small_horizontal_margin"
+        android:layout_marginTop="@dimen/small_vertical_margin"
+        android:onClick="viewTrailers"
+        android:text="@string/trailers"
+        app:layout_constraintEnd_toStartOf="@+id/center_horizontal_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/movie_plot_synopsis" />
+
+    <Button
+        android:id="@+id/reviews_button"
+        style="@style/ButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_horizontal_margin"
+        android:layout_marginTop="@dimen/small_vertical_margin"
+        android:onClick="viewReviews"
+        android:text="@string/reviews"
+        app:layout_constraintStart_toStartOf="@+id/center_horizontal_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/movie_plot_synopsis" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/center_horizontal_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+</android.support.constraint.ConstraintLayout>

@@ -16,4 +16,10 @@ public interface MovieDBClient {
     @GET("/3/movie/{movie_id}")
     Call<Movie> getMovie(@Path("movie_id") int movieID, @Query("api_key") String apiKey);
 
+    @GET("/3/movie/{movie_id}/videos")
+    Call<VideoList> getVideos(@Path("movie_id") int movieID, @Query("api_key") String apiKey);
+
+    @GET("/3/movie/{movie_id}/reviews")
+    Call<ReviewList> getReviews(@Path("movie_id") int movieID, @Query("api_key") String apiKey);
+
 }
