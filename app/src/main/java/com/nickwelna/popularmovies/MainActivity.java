@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity
         implements MovieListAdapterOnClickHandler, MovieAdapterOnClickHandler {
 
     private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String RECYCLER_VIEW_STATE = "recycler-view-state";
     public static final String MOVIE_TAG = "movie";
     public static final String KEY_TAG = "api_key";
     @BindView(R.id.movie_list_recycler_view)
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity
     private boolean requestStarted = false;
     private RequestManager glide;
     private boolean movieSelected = false;
+    Parcelable recyclerViewState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,6 +116,12 @@ public class MainActivity extends AppCompatActivity
 
         }
         movieListRecyclerView.setLayoutManager(layoutManager);
+
+        if (savedInstanceState != null) {
+
+            recyclerViewState = savedInstanceState.getParcelable(RECYCLER_VIEW_STATE);
+
+        }
 
         glide = Glide.with(MainActivity.this);
 
@@ -200,6 +209,14 @@ public class MainActivity extends AppCompatActivity
 
                                         adapter.addMovies(movieList.getResults());
                                         progressBar.setVisibility(View.GONE);
+                                        if (recyclerViewState != null) {
+
+                                            movieListRecyclerView.getLayoutManager()
+                                                                 .onRestoreInstanceState(
+                                                                         recyclerViewState);
+                                            recyclerViewState = null;
+
+                                        }
 
                                     }
 
@@ -247,6 +264,13 @@ public class MainActivity extends AppCompatActivity
 
                         adapter.addMovie(
                                 cursor.getInt(cursor.getColumnIndex(FavoritesEntry.MOVIE_ID)));
+
+                    }
+                    if (recyclerViewState != null) {
+                        movieListRecyclerView.getLayoutManager()
+                                             .onRestoreInstanceState(recyclerViewState);
+
+                        recyclerViewState = null;
 
                     }
                     cursor.close();
@@ -327,6 +351,15 @@ public class MainActivity extends AppCompatActivity
             movieSelected = false;
 
         }
+
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(RECYCLER_VIEW_STATE,
+                movieListRecyclerView.getLayoutManager().onSaveInstanceState());
 
     }
 

@@ -27,6 +27,8 @@
     <string name="vote_average_text">%.1f/10</string>
     <string name="trailer_text">Trailer %d</string>
     <string name="author_text">%s writes:</string>
+    <string name="favorite_added_text">Favorite Added!</string>
+    <string name="favorite_removed_text">Favorite Removed!</string>
 
     <string-array name="choices">
         <item name="no_selection">No Selection</item>

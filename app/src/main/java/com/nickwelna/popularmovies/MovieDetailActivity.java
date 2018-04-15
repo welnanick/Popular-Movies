@@ -119,6 +119,7 @@ public class MovieDetailActivity extends AppCompatActivity {
 
                     Uri uri =
                             getContentResolver().insert(FavoritesEntry.CONTENT_URI, contentValues);
+                    Toast.makeText(getBaseContext(), R.string.favorite_added_text, Toast.LENGTH_LONG).show();
 
                     if (uri == null) {
 
@@ -139,6 +140,11 @@ public class MovieDetailActivity extends AppCompatActivity {
 
                         Toast.makeText(getBaseContext(), R.string.generic_error, Toast.LENGTH_LONG)
                              .show();
+
+                    }
+                    else {
+
+                        Toast.makeText(getBaseContext(), R.string.favorite_removed_text, Toast.LENGTH_LONG).show();
 
                     }
 
